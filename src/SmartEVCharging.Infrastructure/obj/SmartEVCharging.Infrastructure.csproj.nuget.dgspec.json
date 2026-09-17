@@ -1,0 +1,244 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Infrastructure\\SmartEVCharging.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Application\\SmartEVCharging.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Application\\SmartEVCharging.Application.csproj",
+        "projectName": "SmartEVCharging.Application",
+        "projectPath": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Application\\SmartEVCharging.Application.csproj",
+        "packagesPath": "C:\\Users\\Prim0\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Prim0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Domain\\SmartEVCharging.Domain.csproj": {
+                "projectPath": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Domain\\SmartEVCharging.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[16.2.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.315/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Domain\\SmartEVCharging.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Domain\\SmartEVCharging.Domain.csproj",
+        "projectName": "SmartEVCharging.Domain",
+        "projectPath": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Domain\\SmartEVCharging.Domain.csproj",
+        "packagesPath": "C:\\Users\\Prim0\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Prim0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.315/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Infrastructure\\SmartEVCharging.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Infrastructure\\SmartEVCharging.Infrastructure.csproj",
+        "projectName": "SmartEVCharging.Infrastructure",
+        "projectPath": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Infrastructure\\SmartEVCharging.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Prim0\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Prim0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Application\\SmartEVCharging.Application.csproj": {
+                "projectPath": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Application\\SmartEVCharging.Application.csproj"
+              },
+              "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Domain\\SmartEVCharging.Domain.csproj": {
+                "projectPath": "C:\\Users\\Prim0\\SmartEVCharging\\SmartEVCharging\\src\\SmartEVCharging.Domain\\SmartEVCharging.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.21.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.315/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

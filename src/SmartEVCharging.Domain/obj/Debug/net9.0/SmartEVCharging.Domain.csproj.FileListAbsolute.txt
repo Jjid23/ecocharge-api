@@ -1,0 +1,11 @@
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\bin\Debug\net9.0\SmartEVCharging.Domain.deps.json
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\bin\Debug\net9.0\SmartEVCharging.Domain.dll
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\bin\Debug\net9.0\SmartEVCharging.Domain.pdb
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\SmartEVCharging.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\SmartEVCharging.Domain.AssemblyInfoInputs.cache
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\SmartEVCharging.Domain.AssemblyInfo.cs
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\SmartEVCharging.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\SmartEVCharging.Domain.dll
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\refint\SmartEVCharging.Domain.dll
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\SmartEVCharging.Domain.pdb
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\ref\SmartEVCharging.Domain.dll

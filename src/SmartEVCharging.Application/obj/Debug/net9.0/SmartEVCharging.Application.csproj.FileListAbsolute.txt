@@ -1,0 +1,15 @@
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\bin\Debug\net9.0\SmartEVCharging.Application.deps.json
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\bin\Debug\net9.0\SmartEVCharging.Application.dll
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\bin\Debug\net9.0\SmartEVCharging.Application.pdb
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\bin\Debug\net9.0\SmartEVCharging.Domain.dll
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\bin\Debug\net9.0\SmartEVCharging.Domain.pdb
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\obj\Debug\net9.0\SmartEVCharging.Application.csproj.AssemblyReference.cache
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\obj\Debug\net9.0\SmartEVCharging.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\obj\Debug\net9.0\SmartEVCharging.Application.AssemblyInfoInputs.cache
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\obj\Debug\net9.0\SmartEVCharging.Application.AssemblyInfo.cs
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\obj\Debug\net9.0\SmartEVCharging.Application.csproj.CoreCompileInputs.cache
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\obj\Debug\net9.0\SmartEVC.1E260422.Up2Date
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\obj\Debug\net9.0\SmartEVCharging.Application.dll
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\obj\Debug\net9.0\refint\SmartEVCharging.Application.dll
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\obj\Debug\net9.0\SmartEVCharging.Application.pdb
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Application\obj\Debug\net9.0\ref\SmartEVCharging.Application.dll
