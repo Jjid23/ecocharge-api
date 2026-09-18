@@ -17,10 +17,27 @@ builder.WebHost.ConfigureKestrel(options =>
 });
 
 // ── Database ───────────────────────────────────────────────────────────────
-// Railway auto-injects DATABASE_URL from the PostgreSQL plugin
-var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL")
-    ?? builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? throw new InvalidOperationException("No database connection string found.");
+// Try multiple Railway PostgreSQL variable names
+var connectionString =
+    Environment.GetEnvironmentVariable("DATABASE_URL") ??
+    Environment.GetEnvironmentVariable("DATABASE_PRIVATE_URL") ??
+    builder.Configuration.GetConnectionString("DefaultConnection");
+
+// If individual PG vars exist, build the connection string from them
+if (string.IsNullOrWhiteSpace(connectionString))
+{
+    var pgHost = Environment.GetEnvironmentVariable("PGHOST");
+    var pgPort = Environment.GetEnvironmentVariable("PGPORT") ?? "5432";
+    var pgDb   = Environment.GetEnvironmentVariable("PGDATABASE");
+    var pgUser = Environment.GetEnvironmentVariable("PGUSER");
+    var pgPass = Environment.GetEnvironmentVariable("PGPASSWORD");
+
+    if (!string.IsNullOrWhiteSpace(pgHost))
+        connectionString = $"Host={pgHost};Port={pgPort};Database={pgDb};Username={pgUser};Password={pgPass};SSL Mode=Require;Trust Server Certificate=true;";
+}
+
+if (string.IsNullOrWhiteSpace(connectionString))
+    throw new InvalidOperationException("No database connection string found. Set DATABASE_URL in Railway variables.");
 
 // Convert postgres:// URL format to Npgsql format
 if (connectionString.StartsWith("postgres://") || connectionString.StartsWith("postgresql://"))
