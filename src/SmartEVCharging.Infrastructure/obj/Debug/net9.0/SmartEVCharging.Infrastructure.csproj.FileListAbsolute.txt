@@ -17,3 +17,4 @@ C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Infrastructur
 c:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Infrastructure\obj\Debug\net9.0\ref\SmartEVCharging.Infrastructure.dll
 C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Infrastructure\bin\Debug\net9.0\SmartEVCharging.Infrastructure.runtimeconfig.json
 C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Infrastructure\obj\Debug\net9.0\SmartEVCharging.Infrastructure.genruntimeconfig.cache
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Infrastructure\obj\Debug\net9.0\SmartEVCharging.Infrastructure.sourcelink.json

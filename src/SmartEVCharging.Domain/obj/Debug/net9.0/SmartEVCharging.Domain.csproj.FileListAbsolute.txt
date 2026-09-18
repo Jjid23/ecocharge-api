@@ -9,3 +9,4 @@ C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\De
 C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\refint\SmartEVCharging.Domain.dll
 C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\SmartEVCharging.Domain.pdb
 C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\ref\SmartEVCharging.Domain.dll
+C:\Users\Prim0\SmartEVCharging\SmartEVCharging\src\SmartEVCharging.Domain\obj\Debug\net9.0\SmartEVCharging.Domain.sourcelink.json
