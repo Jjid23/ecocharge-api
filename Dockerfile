@@ -20,5 +20,8 @@ COPY --from=build /app/publish .
 
 ENV ASPNETCORE_ENVIRONMENT=Production
 
-# Use shell form so $PORT is expanded at container runtime (Railway injects PORT=8080)
-CMD ASPNETCORE_URLS=http://+:${PORT:-8080} dotnet SmartEVCharging.API.dll
+# Railway provides PORT env var — ASP.NET Core reads ASPNETCORE_HTTP_PORTS directly
+ENV ASPNETCORE_HTTP_PORTS=8080
+
+EXPOSE 8080
+ENTRYPOINT ["dotnet", "SmartEVCharging.API.dll"]
