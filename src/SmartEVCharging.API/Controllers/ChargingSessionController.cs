@@ -112,7 +112,15 @@ public class ChargingSessionController : ControllerBase
         port.Status = ChargingPortStatus.Occupied;
         port.UpdatedAt = DateTime.UtcNow;
         _db.ChargingSessions.Add(session);
-        await _db.SaveChangesAsync();
+
+        try
+        {
+            await _db.SaveChangesAsync();
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "Database error: " + ex.Message + " | Inner: " + ex.InnerException?.Message });
+        }
 
         // Detach all tracked entities to prevent circular reference serialization
         _db.ChangeTracker.Clear();
