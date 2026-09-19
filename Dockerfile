@@ -13,28 +13,21 @@ COPY . .
 RUN dotnet publish src/SmartEVCharging.API/SmartEVCharging.API.csproj \
     -c Release -o /app/publish --no-restore
 
-# ── Runtime: Debian base with both .NET runtime and Python ────────────────────
-FROM debian:bookworm-slim AS runtime
+# ── Runtime: .NET aspnet base + Python added on top ───────────────────────────
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
 
-# Install .NET 9 runtime, Python 3, pip, supervisor, and system libs
+# Add Python 3, pip, supervisor, and system libs for Pillow/OpenCV
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    wget curl ca-certificates \
     python3 python3-pip python3-venv \
     libglib2.0-0 libsm6 libxext6 libxrender-dev libgl1 \
     supervisor \
+    && ln -sf /usr/bin/python3 /usr/bin/python \
     && rm -rf /var/lib/apt/lists/*
 
-# Install .NET 9 ASP.NET runtime
-RUN wget -q https://dot.net/v1/dotnet-install.sh -O /tmp/dotnet-install.sh \
-    && chmod +x /tmp/dotnet-install.sh \
-    && /tmp/dotnet-install.sh --runtime aspnetcore --version 9.0.0 --install-dir /usr/share/dotnet \
-    && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet \
-    && rm /tmp/dotnet-install.sh
-
 # Install Python YOLO dependencies
-COPY yolo-requirements.txt /yolo-requirements.txt
-RUN pip3 install --no-cache-dir -r /yolo-requirements.txt
+COPY yolo-requirements.txt /tmp/yolo-requirements.txt
+RUN pip3 install --no-cache-dir --break-system-packages -r /tmp/yolo-requirements.txt
 
 # Copy YOLO server + model
 COPY yolo-server/main.py /yolo/main.py
@@ -48,7 +41,6 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 ENV ASPNETCORE_ENVIRONMENT=Production
 ENV ASPNETCORE_HTTP_PORTS=8080
-ENV DOTNET_ROOT=/usr/share/dotnet
 
 EXPOSE 8080
 
