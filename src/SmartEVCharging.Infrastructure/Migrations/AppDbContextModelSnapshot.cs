@@ -104,7 +104,7 @@ namespace SmartEVCharging.Infrastructure.Migrations
                         .HasPrecision(10, 2)
                         .HasColumnType("numeric(10,2)");
 
-                    b.Property<Guid>("DeviceId")
+                    b.Property<Guid?>("DeviceId")
                         .HasColumnType("uuid");
 
                     b.Property<decimal>("MaxPowerKw")
@@ -442,8 +442,7 @@ namespace SmartEVCharging.Infrastructure.Migrations
                     b.HasOne("SmartEVCharging.Domain.Entities.Device", "Device")
                         .WithMany("ChargingPorts")
                         .HasForeignKey("DeviceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Device");
                 });

@@ -30,11 +30,12 @@ public class ChargingPortConfiguration : IEntityTypeConfiguration<ChargingPort>
             .IsRequired();
 
         builder.Property(cp => cp.DeviceId)
-            .IsRequired();
+            .IsRequired(false);  // nullable — ports don't always have a device
 
         builder.HasOne(cp => cp.Device)
             .WithMany(d => d.ChargingPorts)
             .HasForeignKey(cp => cp.DeviceId)
+            .IsRequired(false)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasMany(cp => cp.ChargingSessions)

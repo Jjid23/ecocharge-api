@@ -131,7 +131,7 @@ namespace SmartEVCharging.Infrastructure.Migrations
                     MaxPowerKw = table.Column<decimal>(type: "numeric(10,2)", precision: 10, scale: 2, nullable: false),
                     CurrentPowerKw = table.Column<decimal>(type: "numeric(10,2)", precision: 10, scale: 2, nullable: true),
                     Type = table.Column<int>(type: "integer", nullable: false),
-                    DeviceId = table.Column<Guid>(type: "uuid", nullable: false)
+                    DeviceId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -12,7 +12,7 @@ using SmartEVCharging.Infrastructure.Persistence;
 namespace SmartEVCharging.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260918065211_InitialPostgres")]
+    [Migration("20260919095059_InitialPostgres")]
     partial class InitialPostgres
     {
         /// <inheritdoc />
@@ -107,7 +107,7 @@ namespace SmartEVCharging.Infrastructure.Migrations
                         .HasPrecision(10, 2)
                         .HasColumnType("numeric(10,2)");
 
-                    b.Property<Guid>("DeviceId")
+                    b.Property<Guid?>("DeviceId")
                         .HasColumnType("uuid");
 
                     b.Property<decimal>("MaxPowerKw")
@@ -445,8 +445,7 @@ namespace SmartEVCharging.Infrastructure.Migrations
                     b.HasOne("SmartEVCharging.Domain.Entities.Device", "Device")
                         .WithMany("ChargingPorts")
                         .HasForeignKey("DeviceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Device");
                 });
