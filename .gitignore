@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+**/.vs/
+**/.idea/
+**/*.user
+.env
+.env.*
+*.log
+# Allow YOLO model weights
+!yolo-server/
+!yolo-server/*.pt
