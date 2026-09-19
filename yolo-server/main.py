@@ -104,11 +104,51 @@ def decode_image(data: str) -> Image.Image:
         data = data.split(",", 1)[1]
     raw = base64.b64decode(data)
     img = Image.open(io.BytesIO(raw)).convert("RGB")
-    # Do NOT resize or enhance — original image gives best results with v2.pt
+
+    # Enhance webcam images for better detection
+    # 1. Resize to standard size if too small
+    w, h = img.size
+    if w < 320 or h < 320:
+        scale = max(320 / w, 320 / h)
+        img = img.resize((int(w * scale), int(h * scale)), Image.LANCZOS)
+
+    # 2. Slightly sharpen to compensate for webcam blur
+    from PIL import ImageFilter, ImageEnhance
+    img = ImageEnhance.Sharpness(img).enhance(1.5)
+
     return img
 
 
 def run_inference(image: Image.Image) -> list[Detection]:
+    """
+    Try each confidence level. If nothing found, try with
+    brightness/sharpness variations to handle webcam quality issues.
+    """
+    # Pass 1: image as-is
+    detections = _run_at_thresholds(image)
+    if detections:
+        return detections
+
+    # Pass 2: brighter version (helps with dim webcam)
+    from PIL import ImageEnhance
+    brighter = ImageEnhance.Brightness(image).enhance(1.4)
+    detections = _run_at_thresholds(brighter)
+    if detections:
+        print("[YOLO] Detected on brighter pass")
+        return detections
+
+    # Pass 3: more contrast
+    contrast = ImageEnhance.Contrast(image).enhance(1.5)
+    detections = _run_at_thresholds(contrast)
+    if detections:
+        print("[YOLO] Detected on contrast pass")
+        return detections
+
+    print("[YOLO] No detections on any pass.")
+    return []
+
+
+def _run_at_thresholds(image: Image.Image) -> list[Detection]:
     """Try each confidence level until at least one box is found."""
     for threshold in CONF_LADDER:
         results    = model(image, conf=threshold, verbose=False)
