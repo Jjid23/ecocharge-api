@@ -110,15 +110,40 @@ public class ChargingSessionController : ControllerBase
         };
 
         port.Status = ChargingPortStatus.Occupied;
+        port.UpdatedAt = DateTime.UtcNow;
         _db.ChargingSessions.Add(session);
         await _db.SaveChangesAsync();
 
-        var webSession = MapWebSession(session, user.FullName, port);
+        // Detach all tracked entities to prevent circular reference serialization
+        _db.ChangeTracker.Clear();
+
+        // Build response manually — avoid navigation property serialization issues
         return Ok(new
         {
-            message         = "Charging Session Started Successfully!",
-            session         = webSession,
-            port            = MapPort(port),
+            message = "Charging Session Started Successfully!",
+            session = new
+            {
+                sessionId        = session.Id.ToString(),
+                userId           = session.UserId.ToString(),
+                userFullName     = user.FullName,
+                portId           = portId.ToString(),
+                portNumber       = port.PortNumber,
+                connectorType    = port.ConnectorType,
+                durationMinutes  = request.DurationMinutes,
+                pointsUsed       = requiredPoints,
+                startTime        = startTime.ToString("o"),
+                endTime          = endTime.ToString("o"),
+                sessionStatus    = "Active",
+                remainingSeconds = requiredSeconds
+            },
+            port = new
+            {
+                portId        = portId.ToString(),
+                portNumber    = port.PortNumber,
+                portStatus    = "In Use",
+                connectorType = port.ConnectorType,
+                updatedAt     = DateTime.UtcNow.ToString("o")
+            },
             remainingPoints = user.CurrentPoints
         });
     }
