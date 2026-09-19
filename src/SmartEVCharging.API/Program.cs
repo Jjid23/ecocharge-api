@@ -169,5 +169,21 @@ app.UseCors("EcoChargePolicy");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseExceptionHandler(a => a.Run(async ctx =>
+{
+    var ex = ctx.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>();
+    if (ex is not null)
+    {
+        ctx.Response.StatusCode = 500;
+        ctx.Response.ContentType = "application/json";
+        await ctx.Response.WriteAsJsonAsync(new
+        {
+            error   = ex.Error.Message,
+            inner   = ex.Error.InnerException?.Message,
+            type    = ex.Error.GetType().Name,
+            stack   = ex.Error.StackTrace
+        });
+    }
+}));
 app.MapControllers();
 app.Run();

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartEVCharging.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22453eb75347a2f9189aaab70520530b85bed724")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c08ebee6e9b38d299ea915f802a5a9120f5ce4a")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartEVCharging.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartEVCharging.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
