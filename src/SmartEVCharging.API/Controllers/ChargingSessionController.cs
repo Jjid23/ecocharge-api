@@ -481,8 +481,34 @@ public class ChargingSessionController : ControllerBase
     [HttpGet("ports")]
     public async Task<IActionResult> GetPorts()
     {
-        var ports = await _db.ChargingPorts.AsNoTracking().ToListAsync();
-        var result = ports.Select(p => MapPort(p)).ToList();
+        var ports = await _db.ChargingPorts
+            .AsNoTracking()
+            .Select(p => new
+            {
+                p.Id,
+                p.PortNumber,
+                p.PortName,
+                p.Status,
+                p.ConnectorType,
+                p.UpdatedAt
+            })
+            .ToListAsync();
+
+        var result = ports.Select(p => new
+        {
+            portId        = p.Id.ToString(),
+            portNumber    = p.PortNumber,
+            portStatus    = p.Status switch
+            {
+                ChargingPortStatus.Available   => "Available",
+                ChargingPortStatus.Occupied    => "In Use",
+                ChargingPortStatus.Maintenance => "Maintenance",
+                _                              => "Disabled"
+            },
+            connectorType = p.ConnectorType,
+            updatedAt     = p.UpdatedAt?.ToString("o") ?? DateTime.UtcNow.ToString("o")
+        }).ToList();
+
         return Ok(new { ports = result });
     }
 
