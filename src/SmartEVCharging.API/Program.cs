@@ -107,6 +107,9 @@ builder.Services.AddScoped<IChargingPortService,    ChargingPortService>();
 builder.Services.AddScoped<IChargingSessionService, ChargingSessionService>();
 builder.Services.AddScoped<IBinStatusService,       BinStatusService>();
 
+// ── Background services ───────────────────────────────────────────────────
+builder.Services.AddHostedService<SmartEVCharging.API.Services.YoloKeepAliveService>();
+
 // ── HTTP clients ───────────────────────────────────────────────────────────
 // YOLO base URL: env var in production, localhost in dev
 var yoloBaseUrl = builder.Configuration["Yolo:BaseUrl"] ?? "http://localhost:8000/";
