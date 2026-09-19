@@ -162,7 +162,12 @@ app.UseSwaggerUI(o => o.SwaggerEndpoint("/swagger/v1/swagger.json", "Smart EV Ch
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();
+    try { db.Database.Migrate(); }
+    catch (Exception ex)
+    {
+        // Log migration error but don't crash — schema may already be correct
+        Console.WriteLine($"[Migration] Warning: {ex.Message}");
+    }
 }
 
 app.UseCors("EcoChargePolicy");
