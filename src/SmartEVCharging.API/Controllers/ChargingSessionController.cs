@@ -456,7 +456,27 @@ public class ChargingSessionController : ControllerBase
         return Ok(new { transactions = chargingTxs });
     }
 
-    // ── Ports list (web path) ──────────────────────────────────────
+    // ── One-time seed endpoint (only works when ports table is empty) ──────────
+
+    [HttpGet("~/api/seed-ports")]
+    [AllowAnonymous]
+    public async Task<IActionResult> SeedPorts()
+    {
+        var count = await _db.ChargingPorts.CountAsync();
+        if (count > 0)
+            return Ok(new { message = $"Already have {count} ports. No seeding needed." });
+
+        var now = DateTime.UtcNow;
+        _db.ChargingPorts.AddRange(
+            new Domain.Entities.ChargingPort { Id = Guid.NewGuid(), PortName = "Station 1", PortNumber = 1, ConnectorType = "USB-C 30W Fast Charge", Status = ChargingPortStatus.Available, MaxPowerKw = 30, Type = ChargingPortType.Level2, UpdatedAt = now },
+            new Domain.Entities.ChargingPort { Id = Guid.NewGuid(), PortName = "Station 2", PortNumber = 2, ConnectorType = "USB-C 30W Fast Charge", Status = ChargingPortStatus.Available, MaxPowerKw = 30, Type = ChargingPortType.Level2, UpdatedAt = now },
+            new Domain.Entities.ChargingPort { Id = Guid.NewGuid(), PortName = "Station 3", PortNumber = 3, ConnectorType = "Lightning 20W",          Status = ChargingPortStatus.Available, MaxPowerKw = 20, Type = ChargingPortType.Level1, UpdatedAt = now },
+            new Domain.Entities.ChargingPort { Id = Guid.NewGuid(), PortName = "Station 4", PortNumber = 4, ConnectorType = "Micro-USB 15W",          Status = ChargingPortStatus.Available, MaxPowerKw = 15, Type = ChargingPortType.Level1, UpdatedAt = now }
+        );
+        await _db.SaveChangesAsync();
+
+        return Ok(new { message = "4 charging ports seeded successfully!", ports = 4 });
+    }
 
     [HttpGet("ports")]
     public async Task<IActionResult> GetPorts()
